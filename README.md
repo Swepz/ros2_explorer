@@ -61,6 +61,7 @@ Compile packages:
 ```
 cd ~/turtlebot3_ws/
 colcon build
+source install/setup.bash
 ```
 ## How to run
 Execute the launch file of the map you want to use (Opens Gazebo simulation, Rviz, Cartographer, Nav2 and exploration servers):
