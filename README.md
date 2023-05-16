@@ -11,10 +11,31 @@ The map is created using SLAM with the package [Google Cartographer](https://git
 ### [Youtube Video](https://youtu.be/UNiCngwE_Zo)
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/UNiCngwE_Zo/maxresdefault.jpg)](https://youtu.be/UNiCngwE_Zo)
 
-## Installation (tested on Ubuntu 20.04 - ROS 2 Foxy)
 
-[Install ROS2 Foxy](https://docs.ros.org/en/foxy/Installation/Linux-Install-Debians.html)
+## Pre-requisites
 
+1. Ubuntu 20.04 
+2. ROS 2 Foxy
+
+
+## Installation
+
+### Ubuntu 20.04
+You have two options of installing Ubuntu 20.04, either in a virtual machine or dual boot(or dual boot but erase everything).
+1. [Install Ubuntu 20.04 (Dual boot) [Recommended]](https://www.youtube.com/watch?v=-iSAyiicyQY)
+2. [Install Ubuntu 20.04 (Virtual Machine)](https://www.youtube.com/watch?v=IOwlnpWPuj0)
+
+### ROS 2 Foxy
+You have two options of installing ROS2 Foxy:
+1. [Install ROS2 Foxy the official way, follow steps in link](https://docs.ros.org/en/foxy/Installation/Linux-Install-Debians.html)
+2. [Install ROS2 Foxy with unofficial way follow steps below [Recommended]](https://github.com/Tiryoh/ros2_setup_scripts_ubuntu)
+
+```
+sudo apt install git -y
+git clone https://github.com/Tiryoh/ros2_setup_scripts_ubuntu
+cd ros2_setup_scripts_ubuntu
+./ros2-foxy-desktop-main.sh
+``` 
 Don't forget to install colcon:
 ```
 sudo apt install python3-colcon-common-extensions
@@ -40,7 +61,7 @@ cd ~/turtlebot3_ws/src
 ```
 Clone the repository:
 ```
-git clone https://github.com/DaniGarciaLopez/ros2_explorer.git
+git clone https://github.com/swepz/ros2_explorer.git
 ```
 Clone turtlebot original repository to have additional utilities:
 ```
@@ -49,13 +70,13 @@ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.gi
 ```
 Include following lines in ~/.bashrc:
 ```
-source /opt/ros/foxy/setup.bash
-source /usr/share/colcon_cd/function/colcon_cd.sh
-export _colcon_cd_root=~/turtlebot3_ws
-source ~/turtlebot3_ws/install/setup.bash
-
-export TURTLEBOT3_MODEL=burger
-export GAZEBO_MODEL_PATH=~/turtlebot3_ws/src/ros2_explorer/explorer_gazebo/models
+echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
+echo "export _colcon_cd_root=~/turtlebot3_ws" >> ~/.bashrc
+echo "source ~/turtlebot3_ws/install/setup.bash" >> ~/.bashrc
+echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
+echo "export GAZEBO_MODEL_PATH=~/turtlebot3_ws/src/ros2_explorer/explorer_gazebo/models" >> ~/.bashrc
+source ~/.bashrc
 ```
 Compile packages:
 ```
@@ -63,32 +84,31 @@ cd ~/turtlebot3_ws/
 colcon build
 source install/setup.bash
 ```
+
 ## How to run
 Execute the launch file of the map you want to use (Opens Gazebo simulation, Rviz, Cartographer, Nav2 and exploration servers):
 ```
-ros2 launch explorer_bringup map10.launch.py
+ros2 launch explorer_bringup map1.launch.py
 ```
 Execute manager node and select exploring algorithm:
 ```
 ros2 run explorer_bringup manager
 ```
-## Add your own CSV Map
-Add your own csv maps in this folder:
-```
-cd ~/turtlebot3_ws/src/ros2_explorer/explorer_gazebo/maps/
-```
-Run Python script:
-```
-cd ~/turtlebot3_ws/src/ros2_explorer/explorer_gazebo/
-python3 gazebo-map-from-csv.py
-```
-Maps will be converted to Gazebo format in `/explorer_gazebo/models` folder. Create a new .world.xml file in `/explorer_gazebo/worlds` and modify the name of the map you want to use:
-```
-<include>
-  <uri>model://map1</uri>
-</include>
-```
-Create a new launch file in `/explorer_bringup/launch` folder and modify the parameter `map_name` according to the map you just created.
+
+
+## Map description
+
+
+Map 1: is the training map, it's a small map with a few obstacles and a few unknown areas.
+
+![Map 1](explorer_bringup/data/map1.png)
+
+Map 2: is the testing map, it's a bigger map with more obstacles and more unknown areas.
+
+![Map 2](explorer_bringup/data/map2.png)
+
+The color green is the starting point, while blue is the goal point. The red color is the obstacles and the white color is the safe areas.
+
 ## Testing commands
 Cartographer launch:
 ```
@@ -97,7 +117,6 @@ ros2 launch explorer_cartographer cartographer.launch.py use_sim_time:=True
 Navigation launch:
 ```
 ros2 launch explorer_navigation2 nav.launch.py use_sim_time:=True
-
 ```
 Move the robot manually:
 ```
@@ -113,6 +132,6 @@ Publish a goal:
 ros2 action send_goal /navigate_to_pose nav2_msgs/action/NavigateToPose "{pose: {header: {stamp: {sec: 0}, frame_id: 'map'}, pose: {position: {x: 0.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}}"
 ```
 ## Package structure
-![image](https://github.com/DaniGarciaLopez/ros2_explorer/blob/main/explorer_bringup/data/explorer_graph.png)
-![image](https://github.com/DaniGarciaLopez/ros2_explorer/blob/main/explorer_bringup/data/rosgraph.png)
+![image](explorer_bringup/data/explorer_graph.png)
+![image](explorer_bringup/data/rosgraph.png)
 

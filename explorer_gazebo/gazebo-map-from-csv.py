@@ -40,9 +40,9 @@ for filename in filenames: #Iterate through all csv filenames
     print("columns = Y =",inFile.shape[1])
 
     #-- Default to X=rows,Y=columns. Uncomment the next 3 lines to transpose.
-    # print("transposing")
-    # from numpy import transpose
-    # inFile = transpose(inFile)
+    #print("transposing")
+    #from numpy import transpose
+    #inFile = transpose(inFile)
 
     Ez = boxHeight
 
