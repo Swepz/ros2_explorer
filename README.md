@@ -23,14 +23,16 @@ You have two options of installing ROS2 Foxy:
 1. [Install ROS2 Foxy the official way, follow steps in link](https://docs.ros.org/en/foxy/Installation/Linux-Install-Debians.html)
 2. [Install ROS2 Foxy with unofficial way follow steps below [Recommended]](https://github.com/Tiryoh/ros2_setup_scripts_ubuntu)
 
-## Installation of project
-
 ```
 sudo apt install git -y
 git clone https://github.com/Tiryoh/ros2_setup_scripts_ubuntu
 cd ros2_setup_scripts_ubuntu
 ./ros2-foxy-desktop-main.sh
 ``` 
+
+## Installation of project
+Now that Ubuntu 20.04 and ROS2 Foxy is installed, continue with project installation to get started
+
 Don't forget to install colcon:
 ```
 sudo apt install python3-colcon-common-extensions
