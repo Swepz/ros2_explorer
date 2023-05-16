@@ -8,9 +8,7 @@ The map is created using SLAM with the package [Google Cartographer](https://git
   
 >**Discoverer Exploration** prioritizes specific unknown hotspots of the map convoluting the occupancy grid. It's a better way to explore bigger maps in exchange of a higher computational cost.
 
-### [Youtube Video](https://youtu.be/UNiCngwE_Zo)
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/UNiCngwE_Zo/maxresdefault.jpg)](https://youtu.be/UNiCngwE_Zo)
-
+Watch this following video to see core functionality: [https://youtu.be/UNiCngwE_Zo](https://youtu.be/UNiCngwE_Zo)
 
 ## Pre-requisites
 
