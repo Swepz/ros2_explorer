@@ -63,7 +63,8 @@ Clone turtlebot original repository to have additional utilities:
 git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 ```
-Include following lines in ~/.bashrc:
+
+Copy paste the following into terminal
 ```
 echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
