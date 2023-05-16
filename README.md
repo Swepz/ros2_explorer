@@ -125,6 +125,9 @@ Save a map:
 ```
 ros2 run nav2_map_server map_saver_cli
 ```
+Here is a crash course for working with navigation and maps ![ROS2 Nav2 - Navigation Stack in 1 Hour [Crash Course]](https://www.youtube.com/watch?v=idQb2pB-h2Q)
+
+
 Publish a goal:
 ```
 ros2 action send_goal /navigate_to_pose nav2_msgs/action/NavigateToPose "{pose: {header: {stamp: {sec: 0}, frame_id: 'map'}, pose: {position: {x: 0.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}}"
