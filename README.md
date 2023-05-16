@@ -11,12 +11,7 @@ The map is created using SLAM with the package [Google Cartographer](https://git
 Watch this following video to see core functionality: [https://youtu.be/UNiCngwE_Zo](https://youtu.be/UNiCngwE_Zo)
 
 ## Pre-requisites
-
-1. Ubuntu 20.04 
-2. ROS 2 Foxy
-
-
-## Installation
+You need to have both Ubuntu 20.04 and ROS2 Foxy, install by following these guides
 
 ### Ubuntu 20.04
 You have two options of installing Ubuntu 20.04, either in a virtual machine or dual boot(or dual boot but erase everything).
@@ -27,6 +22,8 @@ You have two options of installing Ubuntu 20.04, either in a virtual machine or 
 You have two options of installing ROS2 Foxy:
 1. [Install ROS2 Foxy the official way, follow steps in link](https://docs.ros.org/en/foxy/Installation/Linux-Install-Debians.html)
 2. [Install ROS2 Foxy with unofficial way follow steps below [Recommended]](https://github.com/Tiryoh/ros2_setup_scripts_ubuntu)
+
+## Installation of project
 
 ```
 sudo apt install git -y
