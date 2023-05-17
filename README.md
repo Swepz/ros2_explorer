@@ -125,7 +125,7 @@ Save a map:
 ```
 ros2 run nav2_map_server map_saver_cli
 ```
-Here is a crash course for working with navigation and maps ![ROS2 Nav2 - Navigation Stack in 1 Hour [Crash Course]](https://www.youtube.com/watch?v=idQb2pB-h2Q)
+Here is a crash course for working with navigation and maps [ROS2 Nav2 - Navigation Stack in 1 Hour [Crash Course]](https://www.youtube.com/watch?v=idQb2pB-h2Q)
 
 
 Publish a goal:
