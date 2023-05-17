@@ -74,6 +74,9 @@ echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 echo "export GAZEBO_MODEL_PATH=~/turtlebot3_ws/src/ros2_explorer/explorer_gazebo/models" >> ~/.bashrc
 source ~/.bashrc
 ```
+
+> Note: Ignore the msg, since the directory only exists after using colcon build "bash: /home/username/turtlebot3_ws/install/setup.bash: No such file or directory"
+
 Compile packages:
 ```
 cd ~/turtlebot3_ws/
