@@ -35,7 +35,7 @@ Now that Ubuntu 20.04 and ROS2 Foxy is installed, continue with project installa
 
 Don't forget to install colcon:
 ```
-sudo apt install python3-colcon-common-extensions
+sudo apt install python3-colcon-common-extensions -y
 ```
 Install Gazebo:
 ```
@@ -48,7 +48,7 @@ sudo apt install ros-foxy-turtlebot3-msgs ros-foxy-dynamixel-sdk ros-foxy-hls-lf
 ```
 Install Python libraries:
 ```
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 pip3 install pandas
 ```
 Create a ROS2 workspace:
