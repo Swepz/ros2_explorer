@@ -43,13 +43,11 @@ curl -sSL http://get.gazebosim.org | sh
 ```
 Install packages:
 ```
-sudo apt install ros-foxy-gazebo-ros-pkgs ros-foxy-cartographer ros-foxy-cartographer-ros ros-foxy-navigation2 ros-foxy-nav2-bringup -y
-sudo apt install ros-foxy-turtlebot3-msgs ros-foxy-dynamixel-sdk ros-foxy-hls-lfcd-lds-driver -y
+sudo apt install ros-foxy-gazebo-ros-pkgs ros-foxy-cartographer ros-foxy-cartographer-ros ros-foxy-navigation2 ros-foxy-nav2-bringup ros-foxy-turtlebot3-msgs ros-foxy-dynamixel-sdk ros-foxy-hls-lfcd-lds-driver -y
 ```
 Install Python libraries:
 ```
-sudo apt install python3-pip -y
-pip3 install pandas
+sudo apt install python3-pip -y && pip3 install pandas
 ```
 Create a ROS2 workspace:
 ```
